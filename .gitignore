@@ -2,3 +2,4 @@ app/web/app_dev.php
 docker-compose.yml
 docker/
 app/vendor
+.data/
