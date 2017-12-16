@@ -1,0 +1,9 @@
+9fc26e,172.19.0.1,GET,http://localhost:180/,1513428331,,200
+b645e9,172.19.0.1,GET,http://localhost:180/,1513430447,,200
+77ca0f,172.19.0.1,GET,http://localhost:180/css/bootstrap.min.css.map,1513430453,8674b8,200
+8674b8,172.19.0.1,GET,http://localhost:180/css/bootstrap.min.css.map,1513430453,,404
+390697,172.19.0.1,GET,http://localhost:180/news/create,1513430460,,200
+d90d9d,172.19.0.1,GET,http://localhost:180/bundles/ivoryckeditor/ckeditor.js,1513430461,9122b9,200
+9122b9,172.19.0.1,GET,http://localhost:180/bundles/ivoryckeditor/ckeditor.js,1513430461,,404
+dcb919,172.19.0.1,GET,http://localhost:180/css/bootstrap.min.css.map,1513430462,928d83,200
+928d83,172.19.0.1,GET,http://localhost:180/css/bootstrap.min.css.map,1513430462,,404

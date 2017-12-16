@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% block header %}
+    <!-- Page Header -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-6">
+            <a href="/"><img src="{{ asset('images/header1.jpg') }}"></a>
+          </div>
+          <div class="col-lg-7 col-md-6">
+            {% block authbar %}
+              <div class="top-auth-bar">
+                <ul class="nav justify-content-end">
+                  <li class="nav-item">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        Вы вошли как <nickname>{{app.user.nickname}}</nickname>
+                        <a href="{{ path('fos_user_security_logout') }}">
+                          Выход
+                        </a>
+                    {% else %}
+                        <a class="btn btn-top-auth" href="{{ path('fos_user_security_login') }}">Вход</a>
+                        <a class="btn btn-top-auth" href="{{ path('fos_user_registration_register') }}">Регистрация</a>
+                        
+                    {% endif %}
+                  </li>
+                </ul>
+              </div>
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+
+{% endblock %}
+
+{% block topbar %}<div id="topbar">г. Черноморск, проспект Мира, 43 Ч. Телефон +38 (073) 441 6217</div>{% endblock %}
+
+{% block wrapper %} 
+<div class="container">
+    <div class="row justify-content-center">
+        <!--<div id="main-menu" class="col-md-3">
+            {#% block menu %}
+              <!/-- Navigation --/>
+              <div>
+                  <h4 class="text-centered ">Главное меню</h4>
+                  {#% set menues = findAll() %}
+
+                  {% for menu in menues %}
+                      <a class="list-group-item" href="{{ menu.url }}" title="{{ menu.popuptext }}">{{menu.name}}</a>
+                  {% endfor %}
+              </div>
+              {% endblock %#}
+        </div>-->
+        <div id="content-block" class="col-md-9">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            
+            <p class="copyright text-muted">Copyright &copy; NEXT 2017</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+{% endblock %}
+
+{% endblock %}

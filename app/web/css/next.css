@@ -1,0 +1,251 @@
+@font-face {
+  font-family: 'Akrobat Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Akrobat Regular'), url('../fonts/Akrobat-Regular.woff') format('woff');
+}
+
+body {
+  background-color: #000000;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, .btn {
+  font-family:'Akrobat Regular'; 
+  color:#FFFFFF;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+a img:hover {
+  cursor: pointer;
+}
+
+a:visited {
+  color: #FFFFFF;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input, textarea {
+  background-color: white;
+  border-radius: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  border-radius: 0;
+}
+
+input[type="file"] {
+  background-color: black;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+nickname {
+  background-color: #ffffff;
+  color: #000000;
+  padding: .1rem .3rem;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border-color: #C7C7C7;
+  color: #000000 !important;
+
+}
+
+.btn-top-auth {
+  width: 7rem;
+  padding: .4rem .2rem;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.btn:hover,  .btn:active {
+  background-color: #000000;
+  border-color: #ffffff;
+  color: #FFFFFF !important;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+      max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      max-width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  header.masthead .page-heading h1, header.masthead .site-heading .header-block h1 {
+    font-size: 60px;
+  }
+}
+
+.common-site-heading {
+  padding: 5rem 0;
+}
+
+#topbar {
+  display: flex;
+  /* background-color: #FFFFFF; */
+  justify-content: center;
+  /* color: #000000; */
+  padding: .5rem;
+  border-top: white solid;
+  border-bottom: white solid;
+}
+
+.top-auth-bar {
+  padding: 1rem 2rem;
+}
+
+#main-menu {
+  padding: 0;
+}
+
+#main-menu h4 {
+  padding:1rem;
+  margin:0;
+}
+
+.list-group-item {
+  padding-left: 2.2rem;
+  color: #FFFFFF;
+  padding: .35rem 1.25rem;
+  background-color: #000000;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.list-group-item:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+#content-block {
+  padding: 1rem;
+}
+
+.post {
+  margin:1rem;
+}
+
+.post p {
+  margin: 0;
+}
+
+.post-caption {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.post-announce {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.post-attributes {
+  color:#D1D1D1;
+  font-size: smaller;
+}
+
+footer {
+  padding: 2rem 0 2rem;
+  background-color: #000000;
+}
+
+footer p {
+  margin: 0;
+}
+/* SHOW POST PAGE*/
+
+.show-post-wrap {
+  padding: 1rem 2rem;
+}
+
+.show-post-header {
+  padding: .3rem 0 1.3rem;
+}
+
+.img-in-post {
+  margin: 0 1.4rem 0 0;
+  max-width: 50%;
+}
+
+.in-posts {
+  margin:0;
+}
+   
+.img-polaroid {
+  border-bottom: white solid 3rem !important;
+  border: white solid .5rem;
+  border-radius: 0 0;
+}
+
+.btn-default:focus, .btn-default:hover {
+  color: white;
+  border: 1px solid #000000;
+  background-color: #000000; }
+
+.page-item.active .page-link {
+  z-index: 2;
+  color: #fff;
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.page-link:focus, .page-link:hover {
+  color: #000000;
+}
+
+.page-item a, .page-item a:visited {
+  color: #000000;
+}
+
+.page-item:first-child .page-link, .page-item:last-child .page-link {
+  border-radius: 0; 
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.input-right {
+  color:black;
+}
+
+.has-error span{
+  color: red !important;
+}
+
+.cke_source {
+  white-space: pre-wrap !important;
+}
+
