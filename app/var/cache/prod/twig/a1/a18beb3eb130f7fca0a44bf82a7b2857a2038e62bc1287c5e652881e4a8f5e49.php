@@ -96,7 +96,7 @@ class __TwigTemplate_e452671d2fe4415a09e1c619fb4a0629d118b4400e147cddf1c09369b1b
         $this->displayBlock("widget_container_attributes", $context, $blocks);
         echo ">";
         // line 34
-        if ((twig_test_empty(twig_get_attribute($this->env, $this->getSourceContext(), ($context["form"] ?? null), "parent", array())) && (twig_length_filter($this->env, ($context["errors"] ?? null)) > 0))) {
+        if ((Symfony\Bridge\Twig\Extension\twig_is_root_form(($context["form"] ?? null)) && (twig_length_filter($this->env, ($context["errors"] ?? null)) > 0))) {
             // line 35
             echo "<tr>
             <td colspan=\"2\">";

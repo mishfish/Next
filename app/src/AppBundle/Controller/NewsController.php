@@ -54,8 +54,8 @@ class NewsController extends Controller
         $form = $this->createForm('AppBundle\Form\NewsForm', $post);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $user= $this->get('security.token_storage')->getToken()->getUser(); // get the current user
-            $post->setAuthor($user); // set the current user
+            // $user= $this->get('security.token_storage')->getToken()->getUser(); // get the current user
+            // $post->setAuthor($user); // set the current user
             
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);

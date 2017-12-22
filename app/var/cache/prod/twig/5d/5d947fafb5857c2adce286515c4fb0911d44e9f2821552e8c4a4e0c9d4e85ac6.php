@@ -726,7 +726,7 @@ $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRender
         // line 320
         if ((twig_length_filter($this->env, ($context["errors"] ?? null)) > 0)) {
             // line 321
-            if (twig_get_attribute($this->env, $this->getSourceContext(), ($context["form"] ?? null), "parent", array())) {
+            if ( !Symfony\Bridge\Twig\Extension\twig_is_root_form(($context["form"] ?? null))) {
                 echo "<small class=\"error\">";
             } else {
                 echo "<div data-alert class=\"alert-box alert\">";
@@ -769,7 +769,7 @@ $this->env->getRuntime('Symfony\Bridge\Twig\Form\TwigRenderer')->searchAndRender
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['error'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 326
-            if (twig_get_attribute($this->env, $this->getSourceContext(), ($context["form"] ?? null), "parent", array())) {
+            if ( !Symfony\Bridge\Twig\Extension\twig_is_root_form(($context["form"] ?? null))) {
                 echo "</small>";
             } else {
                 echo "</div>";

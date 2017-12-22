@@ -1,0 +1,66 @@
+{% extends 'AppBundle::template.html.twig' %}
+
+{% block title %}
+    Регистрация
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Регистрация</h1>
+
+{{ form_start(form) }}
+    {#% if csrf_token %}
+        <input type="hidden" class="form-control" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %#}
+    <div class="row auth-row">
+        <div class="col-md-4">
+            <label for="login">Реферральная ссылка:</label>
+        </div>
+        <div class="col-md-8">
+            {{ form_row(form.referralId) }}
+        </div>
+    </div>
+    <div class="row auth-row">
+        <div class="col-md-4">
+            <label for="login">Логин для входа (латинскими буквами):</label>
+        </div>
+        <div class="col-md-8">
+            {{ form_row(form.login) }}
+        </div>
+    </div>
+    <div class="row auth-row">
+        <div class="col-md-4">
+            <label for="password">Введите пароль:</label>
+        </div>
+        <div class="col-md-8">
+               {{ form_row(form.password.first) }}
+        </div>
+    </div>
+    <div class="row auth-row">
+        <div class="col-md-4">
+            <label for="password">Введите пароль ещё раз:</label>
+        </div>
+        <div class="col-md-8">
+            {{ form_row(form.password.second) }}
+        </div>
+    </div>
+    <div class="row auth-row">
+        <div class="col-md-4">
+            <label for="login">Никнейм (отображается на сайте):</label>
+        </div>
+        <div class="col-md-8">
+            {{ form_row(form.nickName) }}
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <input class="btn" type="submit" id="_submit" name="_submit" value="Зарегистрироваться" />
+    </div>
+{{ form_end(form) }}
+{% endblock %}
+
+
+
+
+
+
+
+

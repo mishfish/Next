@@ -86,25 +86,6 @@ $catalogue = new MessageCatalogue('es', array (
     'This form should not contain extra fields.' => 'Este formulario no debería contener campos adicionales.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'El archivo subido es demasiado grande. Por favor, suba un archivo más pequeño.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'El token CSRF no es válido. Por favor, pruebe a enviar nuevamente el formulario.',
-    'fos_user.username.already_used' => 'El nombre de usuario ya está en uso.',
-    'fos_user.username.blank' => 'Por favor, ingrese un nombre de usuario.',
-    'fos_user.username.short' => 'El nombre de usuario es demasiado corto.',
-    'fos_user.username.long' => 'El nombre de usuario es demasiado largo.',
-    'fos_user.email.already_used' => 'La dirección de correo ya está en uso.',
-    'fos_user.email.blank' => 'Por favor, ingrese una dirección de correo.',
-    'fos_user.email.short' => 'La dirección de correo es demasiado corta.',
-    'fos_user.email.long' => 'La dirección de correo es demasiado larga.',
-    'fos_user.email.invalid' => 'La dirección de correo no es válida.',
-    'fos_user.password.blank' => 'Por favor, ingrese una contraseña.',
-    'fos_user.password.short' => 'La contraseña es demasiado corta.',
-    'fos_user.password.mismatch' => 'Las dos contraseñas no coinciden.',
-    'fos_user.new_password.blank' => 'Por favor, ingrese una nueva contraseña.',
-    'fos_user.new_password.short' => 'La nueva contraseña es demasiado corta.',
-    'fos_user.current_password.invalid' => 'La contraseña ingresada no es válida.',
-    'fos_user.group.blank' => 'Por favor, ingrese un nombre.',
-    'fos_user.group.short' => 'El nombre es demasiado corto.',
-    'fos_user.group.long' => 'El nombre es demasiado largo.',
-    'fos_group.name.already_used' => 'El nombre ya está en uso.',
   ),
   'security' => 
   array (
@@ -129,69 +110,6 @@ $catalogue = new MessageCatalogue('es', array (
   array (
     'download' => 'Descargar',
     'form.label.delete' => '¿Eliminar?',
-  ),
-  'FOSUserBundle' => 
-  array (
-    'group.edit.submit' => 'Actualizar grupo',
-    'group.show.name' => 'Nombre de grupo',
-    'group.new.submit' => 'Crear grupo',
-    'group.flash.updated' => 'El grupo ha sido actualizado.',
-    'group.flash.created' => 'El grupo ha sido creado.',
-    'group.flash.deleted' => 'El grupo ha sido borrado.',
-    'security.login.username' => 'Nombre de usuario',
-    'security.login.password' => 'Contraseña',
-    'security.login.remember_me' => 'Recordar',
-    'security.login.submit' => 'Entrar',
-    'profile.show.username' => 'Nombre de usuario',
-    'profile.show.email' => 'Email',
-    'profile.edit.submit' => 'Actualizar usuario',
-    'profile.flash.updated' => 'El perfil ha sido actualizado.',
-    'change_password.submit' => 'Cambiar contraseña',
-    'change_password.flash.success' => 'La contraseña se ha cambiado con éxito.',
-    'registration.check_email' => 'Se ha enviado un email a %email%. Contiene un enlace de activación que debes presionar para activar tu cuenta.',
-    'registration.confirmed' => 'Felicidades %username%, tu cuenta está ahora confirmada.',
-    'registration.back' => 'Volver a la página original.',
-    'registration.submit' => 'Registrar',
-    'registration.flash.user_created' => 'El usuario se ha creado satisfactoriamente.',
-    'registration.email.subject' => 'Bienvenido %username%!',
-    'registration.email.message' => 'Hola %username%!
-
-Para completar la validación de tu cuenta - por favor visita %confirmationUrl%
-
-Este enlace sólo puede utilizarse una vez para validar tu cuenta.
-
-Atentamente,
-el Equipo.
-',
-    'resetting.check_email' => 'Un email ha sido enviado. Contiene un enlace de activación que debes presionar para restablecer tu contraseña.
- Nota: Solo se puede solicitar una nueva contraseña dentro %tokenLifetime% horas.
-
-Si no recibe un correo electrónico, comprueba tu carpeta de correo no deseado o inténtelo de nuevo.
-',
-    'resetting.request.username' => 'Nombre de usuario o correo electrónico',
-    'resetting.request.submit' => 'Restablecer contraseña',
-    'resetting.reset.submit' => 'Cambiar contraseña',
-    'resetting.flash.success' => 'La contraseña se ha cambiado con éxito.',
-    'resetting.email.subject' => 'Restablecer Contraseña',
-    'resetting.email.message' => 'Hola %username%!
-
-Para restablecer tu contraseña - por favor visita %confirmationUrl%
-
-Atentamente,
-el Equipo.
-',
-    'layout.logout' => 'Salir',
-    'layout.login' => 'Entrar',
-    'layout.register' => 'Registrar',
-    'layout.logged_in_as' => 'Identificado como %username%',
-    'form.group_name' => 'Nombre de grupo',
-    'form.username' => 'Nombre de usuario',
-    'form.email' => 'Email',
-    'form.current_password' => 'Contraseña actual',
-    'form.password' => 'Contraseña',
-    'form.password_confirmation' => 'Repita la contraseña',
-    'form.new_password' => 'Nueva contraseña',
-    'form.new_password_confirmation' => 'Repita la contraseña',
   ),
   'KnpPaginatorBundle' => 
   array (
@@ -283,25 +201,6 @@ $catalogueRu = new MessageCatalogue('ru', array (
     'This form should not contain extra fields.' => 'Эта форма не должна содержать дополнительных полей.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Загруженный файл слишком большой. Пожалуйста, попробуйте загрузить файл меньшего размера.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'CSRF значение недопустимо. Пожалуйста, попробуйте повторить отправку формы.',
-    'fos_user.username.already_used' => 'Логин уже используется.',
-    'fos_user.username.blank' => 'Пожалуйста, укажите логин.',
-    'fos_user.username.short' => 'Логин слишком короткий.',
-    'fos_user.username.long' => 'Логин слишком длинный.',
-    'fos_user.email.already_used' => 'Email уже используется.',
-    'fos_user.email.blank' => 'Пожалуйста, укажите Ваш email.',
-    'fos_user.email.short' => 'Email слишком короткий.',
-    'fos_user.email.long' => 'Email слишком длинный.',
-    'fos_user.email.invalid' => 'Email в неправильном формате.',
-    'fos_user.password.blank' => 'Пожалуйста, укажите пароль.',
-    'fos_user.password.short' => 'Пароль слишком короткий.',
-    'fos_user.password.mismatch' => 'Введенные пароли не совпадают.',
-    'fos_user.new_password.blank' => 'Пожалуйста, укажите новый пароль.',
-    'fos_user.new_password.short' => 'Новый пароль слишком короткий.',
-    'fos_user.current_password.invalid' => 'Вы неправильно ввели Ваш текущий пароль.',
-    'fos_user.group.blank' => 'Пожалуйста, укажите название группы.',
-    'fos_user.group.short' => 'Название группы слишком короткое.',
-    'fos_user.group.long' => 'Название группы слишком длинное.',
-    'fos_group.name.already_used' => 'Имя уже используется.',
   ),
   'security' => 
   array (
@@ -327,73 +226,16 @@ $catalogueRu = new MessageCatalogue('ru', array (
     'download' => 'Скачать',
     'form.label.delete' => 'Удалить?',
   ),
-  'FOSUserBundle' => 
-  array (
-    'group.edit.submit' => 'Обновить группу',
-    'group.show.name' => 'Название группы',
-    'group.new.submit' => 'Создать группу',
-    'group.flash.updated' => 'Группа обновлена.',
-    'group.flash.created' => 'Группа создана.',
-    'group.flash.deleted' => 'Группа удалена.',
-    'security.login.username' => 'Логин или email:',
-    'security.login.password' => 'Пароль',
-    'security.login.remember_me' => 'Запомнить меня',
-    'security.login.submit' => 'Войти',
-    'profile.show.username' => 'Имя пользователя',
-    'profile.show.email' => 'Электронная почта',
-    'profile.edit.submit' => 'Обновить',
-    'profile.flash.updated' => 'Профиль пользователя обновлен.',
-    'change_password.submit' => 'Изменить пароль',
-    'change_password.flash.success' => 'Пароль изменен.',
-    'registration.check_email' => 'Письмо отправлено на адрес %email%. В нём содержится ссылка, по которой вы можете подтвердить свою регистрацию.',
-    'registration.confirmed' => 'Поздравляем, %username%, Вы успешно зарегистрировались!',
-    'registration.back' => 'Вернуться на предыдущую страницу.',
-    'registration.submit' => 'Зарегистрироваться',
-    'registration.flash.user_created' => 'Пользователь успешно создан.',
-    'registration.email.subject' => 'Добро пожаловать, %username%!',
-    'registration.email.message' => 'Приветствуем, %username%!
-
-Для подтверждения вашей регистрации, пройдите по ссылке %confirmationUrl%
-
-Эта ссылка может быть использована только единожды для подтверждения вашей учетной записи.
-
-С наилучшими пожеланиями,
-команда сайта.
-',
-    'resetting.check_email' => 'Письмо отправлено. Оно содержит ссылку, при переходе по которой ваш пароль будет сброшен.
-Заметьте, вы сможете запросить новый пароль только через %tokenLifetime% часов.
-
-Если вы не получили письмо, проверьте папку Спам или попробуйте снова.
-',
-    'resetting.request.username' => 'Имя пользователя или электронная почта',
-    'resetting.request.submit' => 'Сбросить пароль',
-    'resetting.reset.submit' => 'Изменить пароль',
-    'resetting.flash.success' => 'Пароль успешно сброшен.',
-    'resetting.email.subject' => 'Сброс пароля',
-    'resetting.email.message' => 'Приветствуем, %username%!
-
-Для сброса пароля, пожалуйста, пройдите по ссылке %confirmationUrl%
-
-С наилучшими пожеланиями,
-команда сайта.
-',
-    'layout.logout' => 'Выход',
-    'layout.login' => 'Вход',
-    'layout.register' => 'Регистрация',
-    'layout.logged_in_as' => 'Вы вошли как %username%',
-    'form.group_name' => 'Название группы',
-    'form.username' => 'Логин для входа на сайт (латинскими буквами):',
-    'form.email' => 'Электронная почта',
-    'form.current_password' => 'Текущий пароль',
-    'form.password' => 'Пароль',
-    'form.password_confirmation' => 'Подтвердите пароль',
-    'form.new_password' => 'Новый пароль',
-    'form.new_password_confirmation' => 'Подтвердите пароль',
-  ),
   'KnpPaginatorBundle' => 
   array (
     'label_previous' => 'Назад',
     'label_next' => 'Вперед',
+  ),
+  'FOSUserBundle' => 
+  array (
+    'registration.confirmed' => 'Поздравляем, %username%, Вы успешно зарегистрировались!',
+    'security.login.username' => 'Логин или email:',
+    'form.username' => 'Логин для входа на сайт (латинскими буквами):',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueRu);

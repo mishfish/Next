@@ -18,8 +18,9 @@ class __TwigTemplate_d3099a4c966c2f653f5d59cc30a0c93315f7a291d5f47b0440b20e257aa
         // line 3
         echo "<script";
         if ((array_key_exists("csp_script_nonce", $context) && ($context["csp_script_nonce"] ?? null))) {
-            echo " nonce=";
+            echo " nonce=\"";
             echo twig_escape_filter($this->env, ($context["csp_script_nonce"] ?? null), "html", null, true);
+            echo "\"";
         }
         echo ">/*<![CDATA[*/
     ";
@@ -210,7 +211,7 @@ class __TwigTemplate_d3099a4c966c2f653f5d59cc30a0c93315f7a291d5f47b0440b20e257aa
 
     public function getDebugInfo()
     {
-        return array (  27 => 7,  19 => 3,);
+        return array (  28 => 7,  19 => 3,);
     }
 
     public function getSourceContext()

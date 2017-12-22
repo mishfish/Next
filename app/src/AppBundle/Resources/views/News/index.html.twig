@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block content %}
+{% for msg in app.session.flashBag.get('success') %}
+    <div class="alert alert-success">
+        {{ msg }}
+    </div>
+{% endfor %}
 {% for item in pagination %}
 <div class="post">
     <a href="/news/{{item.relativeUrl}}"><h3 class="post-caption">{{ item.caption }}</h3></a>

@@ -1,0 +1,47 @@
+{% extends 'AppBundle::template.html.twig' %}
+
+{% block title %}
+    Вход
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Вход</h1>
+
+{% if error %}
+    <div class="alert alert-danger">
+        {{ error.messageKey|trans(error.messageData, 'security') }}
+    </div>
+{% endif %}
+{{ form_start(form) }}
+    <input type="hidden" name="_csrf_token"
+        value="{{ csrf_token('authenticate') }}"
+    >
+    <div class="row auth-row">
+        <div class="col-md-4">
+            <label for="login">Логин:</label>
+        </div>
+        <div class="col-md-8">
+            {{ form_row(form._username) }}
+        </div>
+    </div>
+    <div class="row auth-row">
+        <div class="col-md-4">
+            <label for="password">Пароль:</label>
+        </div>
+        <div class="col-md-8">
+               {{ form_row(form._password) }}
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <button class="btn" type="submit">Войти</button>
+    </div>
+{{ form_end(form) }}
+{% endblock %}
+
+
+
+
+
+
+
+

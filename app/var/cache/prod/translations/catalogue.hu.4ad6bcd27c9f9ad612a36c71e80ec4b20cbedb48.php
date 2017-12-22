@@ -86,25 +86,6 @@ $catalogue = new MessageCatalogue('hu', array (
     'This form should not contain extra fields.' => 'Ez a mezőcsoport nem tartalmazhat extra mezőket.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'A feltöltött fájl túl nagy. Kérem, próbáljon egy kisebb fájlt feltölteni.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'Érvénytelen CSRF token. Kérem, próbálja újra elküldeni az űrlapot.',
-    'fos_user.username.already_used' => 'A felhasználónév már foglalt.',
-    'fos_user.username.blank' => 'A felhasználónév nem lehet üres.',
-    'fos_user.username.short' => 'A felhasználónév túl rövid.',
-    'fos_user.username.long' => 'A felhasználónév túl hosszú.',
-    'fos_user.email.already_used' => 'Az e-mail cím már használatban van.',
-    'fos_user.email.blank' => 'Az e-mail cím nem lehet üres.',
-    'fos_user.email.short' => 'Az e-mail cím túl rövid.',
-    'fos_user.email.long' => 'Az e-mail cím túl hosszú.',
-    'fos_user.email.invalid' => 'A megadott e-mail cím helytelen.',
-    'fos_user.password.blank' => 'A jelszó nem lehet üres.',
-    'fos_user.password.short' => 'A jelszó túl rövid.',
-    'fos_user.password.mismatch' => 'A megadott jelszavak nem egyeznek.',
-    'fos_user.new_password.blank' => 'Az új jelszó nem lehet üres.',
-    'fos_user.new_password.short' => 'Az új jelszó túl rövid.',
-    'fos_user.current_password.invalid' => 'A megadott jelszó helytelen.',
-    'fos_user.group.blank' => 'A név nem lehet üres.',
-    'fos_user.group.short' => 'A név túl rövid.',
-    'fos_user.group.long' => 'A név túl hosszú.',
-    'fos_group.name.already_used' => 'A név már foglalt.',
   ),
   'security' => 
   array (
@@ -129,69 +110,6 @@ $catalogue = new MessageCatalogue('hu', array (
   array (
     'download' => 'Jelenlegi fájl letöltése',
     'form.label.delete' => 'Korábban feltöltött fájl törlése?',
-  ),
-  'FOSUserBundle' => 
-  array (
-    'group.edit.submit' => 'Csoport frissítése',
-    'group.show.name' => 'Csoport név',
-    'group.new.submit' => 'Csoport létrehozása',
-    'group.flash.updated' => 'A csoport frissítve.',
-    'group.flash.created' => 'A csoport létrehozva.',
-    'group.flash.deleted' => 'A csoport törölve.',
-    'security.login.username' => 'Felhasználónév',
-    'security.login.password' => 'Jelszó',
-    'security.login.remember_me' => 'Megjegyzés',
-    'security.login.submit' => 'Belépés',
-    'profile.show.username' => 'Felhasználónév',
-    'profile.show.email' => 'E-mail',
-    'profile.edit.submit' => 'Frissítés',
-    'profile.flash.updated' => 'A profil frissítve.',
-    'change_password.submit' => 'Jelszó megváltoztazása',
-    'change_password.flash.success' => 'A jelszó megváltoztatva.',
-    'registration.check_email' => 'A regisztrált fiók aktiválásához a megadott "%email%" címre küldött üzenetben lévő aktivációs linkre kell kattintani.',
-    'registration.confirmed' => 'Gratulálunk %username%, a regisztrált fiók sikeresen aktiválásra került.',
-    'registration.back' => 'Vissza az előző oldalra.',
-    'registration.submit' => 'Regisztráció',
-    'registration.flash.user_created' => 'A felhasználó sikeresen létrehozva.',
-    'registration.email.subject' => 'Üdvözöljük %username%!',
-    'registration.email.message' => 'Hello %username%!
-
-A regisztrált fiók a következő linkre kattintva aktiválható: %confirmationUrl%
-
-A link csak egyszer használható, rákattintás után ismételt felhasználása nem lehetséges.
-
-Üdvözlettel,
-a Csapat.
-',
-    'resetting.check_email' => 'Elfelejtett jelszava lecseréléséhez, kérjük, kattintson az e-mailben található linkre.
-Felhívjuk figyelmát rá, hogy a link érvényessége %tokenLifetime% óra múlva lejár.
-
-Amennyiben nem találja az e-mailt a postafiókjában, ellenőrizze a levélszemét mappát vagy kérje újra a kiküldést!
-',
-    'resetting.request.username' => 'Felhasználónév vagy e-mail cím',
-    'resetting.request.submit' => 'Jelszó lecserélése',
-    'resetting.reset.submit' => 'Jelszó megváltoztatása',
-    'resetting.flash.success' => 'A jelszó sikeresen lecserélve.',
-    'resetting.email.subject' => 'Jelszó lecserélése',
-    'resetting.email.message' => 'Hello %username%!
-
-A jelszó a következő oldalon cserélhető le: %confirmationUrl%
-
-Üdvözlettel,
-a Csapat.
-',
-    'layout.logout' => 'Kijelentkezés',
-    'layout.login' => 'Bejelentkezés',
-    'layout.register' => 'Regisztráció',
-    'layout.logged_in_as' => 'Belépve mint %username%',
-    'form.group_name' => 'Csoport név',
-    'form.username' => 'Felhasználónév',
-    'form.email' => 'E-mail',
-    'form.current_password' => 'Jelenlegi jelszó',
-    'form.password' => 'Jelszó',
-    'form.password_confirmation' => 'Jelszó megerősítése',
-    'form.new_password' => 'Új jelszó',
-    'form.new_password_confirmation' => 'Új jelszó megerősítése',
   ),
   'KnpPaginatorBundle' => 
   array (
@@ -283,25 +201,6 @@ $catalogueRu = new MessageCatalogue('ru', array (
     'This form should not contain extra fields.' => 'Эта форма не должна содержать дополнительных полей.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Загруженный файл слишком большой. Пожалуйста, попробуйте загрузить файл меньшего размера.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'CSRF значение недопустимо. Пожалуйста, попробуйте повторить отправку формы.',
-    'fos_user.username.already_used' => 'Логин уже используется.',
-    'fos_user.username.blank' => 'Пожалуйста, укажите логин.',
-    'fos_user.username.short' => 'Логин слишком короткий.',
-    'fos_user.username.long' => 'Логин слишком длинный.',
-    'fos_user.email.already_used' => 'Email уже используется.',
-    'fos_user.email.blank' => 'Пожалуйста, укажите Ваш email.',
-    'fos_user.email.short' => 'Email слишком короткий.',
-    'fos_user.email.long' => 'Email слишком длинный.',
-    'fos_user.email.invalid' => 'Email в неправильном формате.',
-    'fos_user.password.blank' => 'Пожалуйста, укажите пароль.',
-    'fos_user.password.short' => 'Пароль слишком короткий.',
-    'fos_user.password.mismatch' => 'Введенные пароли не совпадают.',
-    'fos_user.new_password.blank' => 'Пожалуйста, укажите новый пароль.',
-    'fos_user.new_password.short' => 'Новый пароль слишком короткий.',
-    'fos_user.current_password.invalid' => 'Вы неправильно ввели Ваш текущий пароль.',
-    'fos_user.group.blank' => 'Пожалуйста, укажите название группы.',
-    'fos_user.group.short' => 'Название группы слишком короткое.',
-    'fos_user.group.long' => 'Название группы слишком длинное.',
-    'fos_group.name.already_used' => 'Имя уже используется.',
   ),
   'security' => 
   array (
@@ -327,73 +226,16 @@ $catalogueRu = new MessageCatalogue('ru', array (
     'download' => 'Скачать',
     'form.label.delete' => 'Удалить?',
   ),
-  'FOSUserBundle' => 
-  array (
-    'group.edit.submit' => 'Обновить группу',
-    'group.show.name' => 'Название группы',
-    'group.new.submit' => 'Создать группу',
-    'group.flash.updated' => 'Группа обновлена.',
-    'group.flash.created' => 'Группа создана.',
-    'group.flash.deleted' => 'Группа удалена.',
-    'security.login.username' => 'Логин или email:',
-    'security.login.password' => 'Пароль',
-    'security.login.remember_me' => 'Запомнить меня',
-    'security.login.submit' => 'Войти',
-    'profile.show.username' => 'Имя пользователя',
-    'profile.show.email' => 'Электронная почта',
-    'profile.edit.submit' => 'Обновить',
-    'profile.flash.updated' => 'Профиль пользователя обновлен.',
-    'change_password.submit' => 'Изменить пароль',
-    'change_password.flash.success' => 'Пароль изменен.',
-    'registration.check_email' => 'Письмо отправлено на адрес %email%. В нём содержится ссылка, по которой вы можете подтвердить свою регистрацию.',
-    'registration.confirmed' => 'Поздравляем, %username%, Вы успешно зарегистрировались!',
-    'registration.back' => 'Вернуться на предыдущую страницу.',
-    'registration.submit' => 'Зарегистрироваться',
-    'registration.flash.user_created' => 'Пользователь успешно создан.',
-    'registration.email.subject' => 'Добро пожаловать, %username%!',
-    'registration.email.message' => 'Приветствуем, %username%!
-
-Для подтверждения вашей регистрации, пройдите по ссылке %confirmationUrl%
-
-Эта ссылка может быть использована только единожды для подтверждения вашей учетной записи.
-
-С наилучшими пожеланиями,
-команда сайта.
-',
-    'resetting.check_email' => 'Письмо отправлено. Оно содержит ссылку, при переходе по которой ваш пароль будет сброшен.
-Заметьте, вы сможете запросить новый пароль только через %tokenLifetime% часов.
-
-Если вы не получили письмо, проверьте папку Спам или попробуйте снова.
-',
-    'resetting.request.username' => 'Имя пользователя или электронная почта',
-    'resetting.request.submit' => 'Сбросить пароль',
-    'resetting.reset.submit' => 'Изменить пароль',
-    'resetting.flash.success' => 'Пароль успешно сброшен.',
-    'resetting.email.subject' => 'Сброс пароля',
-    'resetting.email.message' => 'Приветствуем, %username%!
-
-Для сброса пароля, пожалуйста, пройдите по ссылке %confirmationUrl%
-
-С наилучшими пожеланиями,
-команда сайта.
-',
-    'layout.logout' => 'Выход',
-    'layout.login' => 'Вход',
-    'layout.register' => 'Регистрация',
-    'layout.logged_in_as' => 'Вы вошли как %username%',
-    'form.group_name' => 'Название группы',
-    'form.username' => 'Логин для входа на сайт (латинскими буквами):',
-    'form.email' => 'Электронная почта',
-    'form.current_password' => 'Текущий пароль',
-    'form.password' => 'Пароль',
-    'form.password_confirmation' => 'Подтвердите пароль',
-    'form.new_password' => 'Новый пароль',
-    'form.new_password_confirmation' => 'Подтвердите пароль',
-  ),
   'KnpPaginatorBundle' => 
   array (
     'label_previous' => 'Назад',
     'label_next' => 'Вперед',
+  ),
+  'FOSUserBundle' => 
+  array (
+    'registration.confirmed' => 'Поздравляем, %username%, Вы успешно зарегистрировались!',
+    'security.login.username' => 'Логин или email:',
+    'form.username' => 'Логин для входа на сайт (латинскими буквами):',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueRu);

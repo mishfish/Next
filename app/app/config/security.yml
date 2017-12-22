@@ -1,13 +1,17 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
-
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
-        fos_userbundle:
-            id: fos_user.user_provider.username_email
         in_memory:
             memory: ~
+        user_db_provider:
+            entity:
+                class: AppBundle:User
+                property: login
+    encoders:
+        AppBundle\Entity\User:
+            algorithm: bcrypt
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -17,16 +21,28 @@ security:
 
         main:
             anonymous: ~
+            guard:
+                authenticators: 
+                    - app.security.login_form_authenticator
             # activate different ways to authenticate
-            logout: ~
+            logout: 
+                path: /logout
             form_login:
                 csrf_token_generator: security.csrf.token_manager
-            remember_me:
-                secret: '%secret%'
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
+            pattern: ^/
+            http_basic: ~
+            provider: user_db_provider
+
+            remember_me:
+                secret:   '%secret%'
+                lifetime: 604800 # 1 week in seconds
+                path:     /
+                always_remember_me: true
+            
 
             # https://symfony.com/doc/current/security/form_login_setup.html
             #form_login: ~
-    encoders:
-        AppBundle\Entity\NextUser: bcrypt
+    access_control:
+        # require ROLE_ADMIN for /news/create
+        - { path: ^/news/create, roles: ROLE_ADMIN }

@@ -81,17 +81,6 @@ vich_uploader:
             delete_on_update:   true
             delete_on_remove:   true
 
-fos_user:
-    db_driver: orm
-    firewall_name: main
-    user_class: AppBundle\Entity\NextUser
-    from_email:
-        address: "nick.whatsoever@gmail.com"
-        sender_name: "Nick Zames"
-    registration:
-        form:
-            type: AppBundle\Form\RegistrationFormType
-
 ivory_ck_editor:
     input_sync: true
     autoload: true

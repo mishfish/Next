@@ -85,24 +85,6 @@ $catalogue = new MessageCatalogue('nl', array (
     'This form should not contain extra fields.' => 'Dit formulier mag geen extra velden bevatten.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Het geüploade bestand is te groot. Probeer een kleiner bestand te uploaden.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'De CSRF-token is ongeldig. Probeer het formulier opnieuw te versturen.',
-    'fos_user.username.already_used' => 'De gebruikersnaam is al in gebruik.',
-    'fos_user.username.blank' => 'Voer een gebruikersnaam in.',
-    'fos_user.username.short' => 'De gebruikersnaam is te kort.',
-    'fos_user.username.long' => 'De gebruikersnaam is te lang.',
-    'fos_user.email.already_used' => 'Het e-mailadres is al in gebruik.',
-    'fos_user.email.blank' => 'Voer een e-mailadres in.',
-    'fos_user.email.short' => 'Het e-mailadres is te kort.',
-    'fos_user.email.long' => 'Het e-mailadres is te lang.',
-    'fos_user.email.invalid' => 'Het e-mailadres is ongeldig.',
-    'fos_user.password.blank' => 'Voer een wachtwoord in.',
-    'fos_user.password.short' => 'Het wachtwoord is te kort.',
-    'fos_user.password.mismatch' => 'Het ingevoerde wachtwoord komt niet overeen.',
-    'fos_user.new_password.blank' => 'Voer een nieuw wachtwoord in.',
-    'fos_user.new_password.short' => 'Het nieuwe wachtwoord is te kort.',
-    'fos_user.current_password.invalid' => 'Het ingevulde wachtwoord is ongeldig.',
-    'fos_user.group.blank' => 'Voer een naam in.',
-    'fos_user.group.short' => 'De naam is te kort.',
-    'fos_user.group.long' => 'De naam is te lang.',
   ),
   'security' => 
   array (
@@ -122,67 +104,6 @@ $catalogue = new MessageCatalogue('nl', array (
     'Credentials have expired.' => 'Authenticatiegegevens zijn verlopen.',
     'Account is disabled.' => 'Account is gedeactiveerd.',
     'Account is locked.' => 'Account is geblokkeerd.',
-  ),
-  'FOSUserBundle' => 
-  array (
-    'group.edit.submit' => 'Groep bijwerken',
-    'group.show.name' => 'Groep naam',
-    'group.new.submit' => 'Groep aanmaken',
-    'group.flash.updated' => 'De groep is bijgewerkt.',
-    'group.flash.created' => 'De groep is aangemaakt.',
-    'group.flash.deleted' => 'De groep is verwijderd.',
-    'security.login.username' => 'Gebruikersnaam',
-    'security.login.password' => 'Wachtwoord',
-    'security.login.remember_me' => 'Onthoud mijn gegevens',
-    'security.login.submit' => 'Inloggen',
-    'profile.show.username' => 'Gebruikersnaam',
-    'profile.show.email' => 'E-mail',
-    'profile.edit.submit' => 'Bijwerken',
-    'profile.flash.updated' => 'Het profiel is bijgewerkt.',
-    'change_password.submit' => 'Wachtwoord wijzigen',
-    'change_password.flash.success' => 'Het wachtwoord is gewijzigd.',
-    'registration.check_email' => 'Er is een e-mail verstuurd naar %email%, met een link om uw account te activeren.',
-    'registration.confirmed' => 'Gefeliciteerd %username%, uw account is nu geactiveerd.',
-    'registration.back' => 'Terug naar de oorspronkelijke pagina.',
-    'registration.submit' => 'Registreer',
-    'registration.flash.user_created' => 'De gebruiker is succesvol aangemaakt.',
-    'registration.email.subject' => 'Welkom %username%!',
-    'registration.email.message' => 'Hallo %username%!
-
-U moet uw account nog valideren, ga naar %confirmationUrl%
-
-Vriendelijke groeten,
-het Team.
-',
-    'resetting.check_email' => 'Er werd een email gestuurd. De email bevat een link om je wachtwoord te resetten.
-Opgelet: Je kan pas na %tokenLifetime% uur een nieuw wachtwoord aanvragen.
-
-Indien je geen email ontvangen hebt, controleer dan zeker je spam folder of probeer opnieuw.
-',
-    'resetting.request.username' => 'Gebruikersnaam of e-mailadres',
-    'resetting.request.submit' => 'Reset wachtwoord',
-    'resetting.reset.submit' => 'Wijzig wachtwoord',
-    'resetting.flash.success' => 'Het wachtwoord is succesvol gereset.',
-    'resetting.email.subject' => 'Reset wachtwoord',
-    'resetting.email.message' => 'Hallo %username%!
-
-Om uw wachtwoord te resetten, klikt u op de volgende link %confirmationUrl%
-
-Met vriendelijke groet,
-het Team.
-',
-    'layout.logout' => 'Uitloggen',
-    'layout.login' => 'Inloggen',
-    'layout.register' => 'Registreer',
-    'layout.logged_in_as' => 'Ingelogd als %username%',
-    'form.group_name' => 'Groep naam',
-    'form.username' => 'Gebruikersnaam',
-    'form.email' => 'E-mail',
-    'form.current_password' => 'Huidig wachtwoord',
-    'form.password' => 'Wachtwoord',
-    'form.password_confirmation' => 'Wachtwoord controle',
-    'form.new_password' => 'Nieuw wachtwoord',
-    'form.new_password_confirmation' => 'Wachtwoord controle',
   ),
   'KnpPaginatorBundle' => 
   array (
@@ -274,25 +195,6 @@ $catalogueRu = new MessageCatalogue('ru', array (
     'This form should not contain extra fields.' => 'Эта форма не должна содержать дополнительных полей.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Загруженный файл слишком большой. Пожалуйста, попробуйте загрузить файл меньшего размера.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'CSRF значение недопустимо. Пожалуйста, попробуйте повторить отправку формы.',
-    'fos_user.username.already_used' => 'Логин уже используется.',
-    'fos_user.username.blank' => 'Пожалуйста, укажите логин.',
-    'fos_user.username.short' => 'Логин слишком короткий.',
-    'fos_user.username.long' => 'Логин слишком длинный.',
-    'fos_user.email.already_used' => 'Email уже используется.',
-    'fos_user.email.blank' => 'Пожалуйста, укажите Ваш email.',
-    'fos_user.email.short' => 'Email слишком короткий.',
-    'fos_user.email.long' => 'Email слишком длинный.',
-    'fos_user.email.invalid' => 'Email в неправильном формате.',
-    'fos_user.password.blank' => 'Пожалуйста, укажите пароль.',
-    'fos_user.password.short' => 'Пароль слишком короткий.',
-    'fos_user.password.mismatch' => 'Введенные пароли не совпадают.',
-    'fos_user.new_password.blank' => 'Пожалуйста, укажите новый пароль.',
-    'fos_user.new_password.short' => 'Новый пароль слишком короткий.',
-    'fos_user.current_password.invalid' => 'Вы неправильно ввели Ваш текущий пароль.',
-    'fos_user.group.blank' => 'Пожалуйста, укажите название группы.',
-    'fos_user.group.short' => 'Название группы слишком короткое.',
-    'fos_user.group.long' => 'Название группы слишком длинное.',
-    'fos_group.name.already_used' => 'Имя уже используется.',
   ),
   'security' => 
   array (
@@ -318,73 +220,16 @@ $catalogueRu = new MessageCatalogue('ru', array (
     'download' => 'Скачать',
     'form.label.delete' => 'Удалить?',
   ),
-  'FOSUserBundle' => 
-  array (
-    'group.edit.submit' => 'Обновить группу',
-    'group.show.name' => 'Название группы',
-    'group.new.submit' => 'Создать группу',
-    'group.flash.updated' => 'Группа обновлена.',
-    'group.flash.created' => 'Группа создана.',
-    'group.flash.deleted' => 'Группа удалена.',
-    'security.login.username' => 'Логин или email:',
-    'security.login.password' => 'Пароль',
-    'security.login.remember_me' => 'Запомнить меня',
-    'security.login.submit' => 'Войти',
-    'profile.show.username' => 'Имя пользователя',
-    'profile.show.email' => 'Электронная почта',
-    'profile.edit.submit' => 'Обновить',
-    'profile.flash.updated' => 'Профиль пользователя обновлен.',
-    'change_password.submit' => 'Изменить пароль',
-    'change_password.flash.success' => 'Пароль изменен.',
-    'registration.check_email' => 'Письмо отправлено на адрес %email%. В нём содержится ссылка, по которой вы можете подтвердить свою регистрацию.',
-    'registration.confirmed' => 'Поздравляем, %username%, Вы успешно зарегистрировались!',
-    'registration.back' => 'Вернуться на предыдущую страницу.',
-    'registration.submit' => 'Зарегистрироваться',
-    'registration.flash.user_created' => 'Пользователь успешно создан.',
-    'registration.email.subject' => 'Добро пожаловать, %username%!',
-    'registration.email.message' => 'Приветствуем, %username%!
-
-Для подтверждения вашей регистрации, пройдите по ссылке %confirmationUrl%
-
-Эта ссылка может быть использована только единожды для подтверждения вашей учетной записи.
-
-С наилучшими пожеланиями,
-команда сайта.
-',
-    'resetting.check_email' => 'Письмо отправлено. Оно содержит ссылку, при переходе по которой ваш пароль будет сброшен.
-Заметьте, вы сможете запросить новый пароль только через %tokenLifetime% часов.
-
-Если вы не получили письмо, проверьте папку Спам или попробуйте снова.
-',
-    'resetting.request.username' => 'Имя пользователя или электронная почта',
-    'resetting.request.submit' => 'Сбросить пароль',
-    'resetting.reset.submit' => 'Изменить пароль',
-    'resetting.flash.success' => 'Пароль успешно сброшен.',
-    'resetting.email.subject' => 'Сброс пароля',
-    'resetting.email.message' => 'Приветствуем, %username%!
-
-Для сброса пароля, пожалуйста, пройдите по ссылке %confirmationUrl%
-
-С наилучшими пожеланиями,
-команда сайта.
-',
-    'layout.logout' => 'Выход',
-    'layout.login' => 'Вход',
-    'layout.register' => 'Регистрация',
-    'layout.logged_in_as' => 'Вы вошли как %username%',
-    'form.group_name' => 'Название группы',
-    'form.username' => 'Логин для входа на сайт (латинскими буквами):',
-    'form.email' => 'Электронная почта',
-    'form.current_password' => 'Текущий пароль',
-    'form.password' => 'Пароль',
-    'form.password_confirmation' => 'Подтвердите пароль',
-    'form.new_password' => 'Новый пароль',
-    'form.new_password_confirmation' => 'Подтвердите пароль',
-  ),
   'KnpPaginatorBundle' => 
   array (
     'label_previous' => 'Назад',
     'label_next' => 'Вперед',
+  ),
+  'FOSUserBundle' => 
+  array (
+    'registration.confirmed' => 'Поздравляем, %username%, Вы успешно зарегистрировались!',
+    'security.login.username' => 'Логин или email:',
+    'form.username' => 'Логин для входа на сайт (латинскими буквами):',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueRu);

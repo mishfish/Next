@@ -16,12 +16,12 @@
                   <li class="nav-item">
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         Вы вошли как <nickname>{{app.user.nickname}}</nickname>
-                        <a href="{{ path('fos_user_security_logout') }}">
+                        <a href="{{ path('auth_logout') }}">
                           Выход
                         </a>
                     {% else %}
-                        <a class="btn btn-top-auth" href="{{ path('fos_user_security_login') }}">Вход</a>
-                        <a class="btn btn-top-auth" href="{{ path('fos_user_registration_register') }}">Регистрация</a>
+                        <a class="btn btn-top-auth" href="{{ path('auth_login')}}">Вход</a>
+                        <a class="btn btn-top-auth" href="{{ path('auth_register')}}">Регистрация</a>
                         
                     {% endif %}
                   </li>

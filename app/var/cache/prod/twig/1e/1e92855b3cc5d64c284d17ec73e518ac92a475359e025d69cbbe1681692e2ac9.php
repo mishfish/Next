@@ -107,11 +107,11 @@ class __TwigTemplate_46df88927453df23f4a775df7b92fa39870b1c321232acc3b58130d19fe
         } else {
             // line 23
             echo "                        <a class=\"btn btn-top-auth\" href=\"";
-            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_login");
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("auth_login");
             echo "\">Вход</a>
                         <a class=\"btn btn-top-auth\" href=\"";
             // line 24
-            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_registration_register");
+            echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("auth_register");
             echo "\">Регистрация</a>
                         
                     ";

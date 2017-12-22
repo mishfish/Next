@@ -90,8 +90,8 @@ class NextNews
     /**
      *
      * Many Posts have One Author
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\NextUser")
-     * @ORM\JoinColumn(name="Author", referencedColumnName="id", nullable=false)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="Author", referencedColumnName="Id", nullable=false)
      */
      private $author;
 
@@ -322,8 +322,6 @@ class NextNews
     {
         return $this->ImageUpdateTime;
     }
-    /**
-    * @return string
-    */
+
 }
 

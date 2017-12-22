@@ -31,6 +31,7 @@ img {
   height: auto;
 }
 
+/* Form styles */
 input, textarea {
   background-color: white;
   border-radius: 0;
@@ -50,6 +51,12 @@ input[type="file"] {
 
 .form-control {
   border-radius: 0;
+  display: inline-block;
+}
+
+.auth-row {
+  margin: 1rem;
+  align-items: center;
 }
 
 nickname {
@@ -237,6 +244,7 @@ footer p {
   cursor: not-allowed;
 }
 
+/* Form */
 .input-right {
   color:black;
 }
@@ -245,7 +253,21 @@ footer p {
   color: red !important;
 }
 
+.ref-id {
+  text-transform: uppercase;
+}   
+
 .cke_source {
   white-space: pre-wrap !important;
 }
 
+/* ALERTS */
+.alert-success {
+  color: #11bd38;
+  background-color: black;
+  border-color: #ffffff;
+}
+
+.alert {
+  border-radius: 0;
+}
