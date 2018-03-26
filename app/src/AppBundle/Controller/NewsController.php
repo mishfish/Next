@@ -5,87 +5,75 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use AppBundle\Entity\NextNews;
-use AppBundle\Extensions\NimrodImageResizer;
 
-class NewsController extends Controller
+use FOS\RestBundle\Controller\Annotations as Rest;
+use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use FOS\RestBundle\View\View;
+
+class NewsController extends FOSRestController
 {
     /**
-     * @Route("/", name="homepage")
-     */
-    public function indexAction(Request $request)
-    {
-        $em = $this->get('doctrine.orm.entity_manager');
-        $dql = "SELECT a FROM AppBundle:NextNews a ORDER BY a.creationDate DESC";
-        $query = $em->createQuery($dql);
-
-        $paginator  = $this->get('knp_paginator');
-        $pagination = $paginator->paginate(
-            $query, 
-            $request->query->getInt('page', 1)/*page number*/,
-            5/*limit per page*/
-        );
-
-        return $this->render('AppBundle:News:index.html.twig', array(
-            'pagination' => $pagination
-        ));
-    }
-
-    /**
-    * @Route("/news/create", name="news_create")
+    * @Rest\Post("/api/mail")
     */
-    public function createAction(Request $request, NimrodImageResizer $resizeImg)
-    {   
-        // TEST IMAGE RESIZE
-              //indicate which file to resize (can be any type jpg/png/gif/etc...)
-        // $file = 'images/news/1.jpg';
-        
-        //indicate the path and name for the new resized file
-        // $resizedFile = 'images/news/1-1.jpg';
-        
-        //call the function (when passing path to pic)
-        // $resizeImg->smart_resize_image($file , null, 100 , 100 , false , $resizedFile , false , false ,100 );
-        
-        $post = new NextNews();
-        $form = $this->createForm('AppBundle\Form\NewsForm', $post);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            // $user= $this->get('security.token_storage')->getToken()->getUser(); // get the current user
-            // $post->setAuthor($user); // set the current user
-            
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($post);
-            $em->flush();
+   public function postAction(\Swift_Mailer $mailer)
+   {
+    //  $restresult = $this->getDoctrine()->getRepository('AppBundle:User')->findAll();
+    //    if ($restresult === null) {
+    //      return new View("there are no users exist", Response::HTTP_NOT_FOUND);
+    // }
+    // // return $this->json($restresult);
+    // Create the email and send the message
 
-            if (is_null($post->getRelativeUrl())) $post->setRelativeUrl($post->getId());
-            $em->flush();
-            
-            return $this->redirectToRoute('news_show', array('relativeUrl' => $post->getRelativeUrl()));
-        }
-        
-        return $this->render('AppBundle:News:create.html.twig', array(
-            'post' => $post,
-            'form' => $form->createView()
-        ));
-    }
+    $message = (new \Swift_Message('Hello Email'))
+    ->setFrom('send@example.com')
+    ->setTo('nick.whatsoever@gmail.com')
+    ->setBody(
+        $this->renderView(
+            'Email/ex.html.twig'
+        ),
+        'text/html'
+    );
+    $this->get('mailer')->send($message);
+    // $mailer->send($message);
+
+    // $to = 'nick.whatsoever@gmail.com'; 
+    // $email_subject = "Некст";
+    // $email_body = "Итак, Николай";
+    // $headers = "From: noreply@kvestidea.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
+    // $headers .= "Reply-To: nick.whatsoever@gmail.com";	
+    // mail($to,$email_subject,$email_body,$headers);
+    return $this->redirectToRoute('homepage');
+   }
 
     /**
-     * @Route("/news/{relativeUrl}", name="news_show")
-     */
-     public function showAction($relativeUrl)
-     {
-         $item = $this->getDoctrine()
-             ->getRepository('AppBundle:NextNews')
-            // ->find($relativeUrl);
-             ->findOneBy(['relativeUrl' => $relativeUrl]);
-         return $this->render('AppBundle:News:show.html.twig', array(
-             'item' => $item
-         ));
-     }
+    * @Rest\Get("/api/mail")
+    */
+    public function getAction()
+    {
+        return $this->redirectToRoute('homepage2', array('slug'=>'calendar'));
+    }
 
+
+    /**
+     * @Route("/", name="homepage")
+     * @Route("/{slug}", name="homepage2")
+     */
+    public function indexAction(Request $request, $slug = null)
+    {
+        // return $this->render('AppBundle:News:index.html.twig', array(
+        //     'test' => 'test'
+        // ));
+
+        return $this->render('AppBundle:News:index.html.twig', [
+            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ]);
+    }
 
 }

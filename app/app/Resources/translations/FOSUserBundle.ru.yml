@@ -1,9 +1,0 @@
-registration:
-    confirmed: 'Поздравляем, %username%, Вы успешно зарегистрировались!'
-
-security:
-    login:
-        username: 'Логин или email:'
-
-form:
-    username: 'Логин для входа на сайт (латинскими буквами):'

@@ -16,7 +16,7 @@ framework:
         resource: '%kernel.project_dir%/app/config/routing.yml'
         strict_requirements: ~
     form: ~
-    csrf_protection: ~
+    csrf_protection: false
     validation: { enable_annotations: true }
     #serializer: { enable_annotations: true }
     templating:
@@ -68,61 +68,33 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
-# Image Uploader config with database and where to store photos
-vich_uploader:
-    db_driver: orm 
+fos_rest:
+    routing_loader:
+        default_format: json
+    param_fetcher_listener: true
+    body_listener: true
+    #disable_csrf_role: ROLE_USER
+    body_converter:
+        enabled: true
+    view:
+        view_response_listener: force
 
-    mappings:
-        next_news_image:
-            uri_prefix:         '/images/news'
-            upload_destination: '%kernel.root_dir%/../web/images/news'
-    
-            inject_on_load:     false
-            delete_on_update:   true
-            delete_on_remove:   true
+nelmio_cors:
+    defaults:
+        allow_credentials: false
+        allow_origin: []
+        allow_headers: []
+        allow_methods: []
+        expose_headers: []
+        max_age: 0
+    paths:
+        '^/api/':
+            allow_origin: ['*']
+            allow_headers: ['*']
+            allow_methods: ['POST', 'PUT', 'GET', 'DELETE']
+            max_age: 3600
 
-ivory_ck_editor:
-    input_sync: true
-    autoload: true
-    configs:
-        my_config:
-            toolbar: standard
-
-knp_paginator:
-    page_range: 5                       # number of links showed in the pagination menu (e.g: you have 10 pages, a page_range of 3, on the 5th page you'll see links to page 4, 5, 6)
-    default_options:                                 
-        page_name: page                 # page query parameter name
-        sort_field_name: sort           # sort field query parameter name
-        sort_direction_name: direction  # sort direction query parameter name
-        distinct: true                  # ensure distinct results, useful when ORM queries are using GROUP BY statements
-        filter_field_name: filterField  # filter field query parameter name
-        filter_value_name: filterValue  # filter value query paameter name
-    template:                                        
-        pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig'     # sliding pagination controls template                                    
-        sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template                                
-        filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
-
-liip_imagine:
-    resolvers:
-        default:
-            web_path: ~
-
-    filter_sets:
-        cache: ~
-
-        # the name of the "filter set"
-        my_thumb:
-
-            # adjust the image quality to 75%
-            quality: 75
-
-            # list of transformations to apply (the "filters")
-            filters:
-
-                # create a thumbnail: set size to 120x90 and use the "outbound" mode
-                # to crop the image when the size ratio of the input differs
-                thumbnail: { size: [120, 90], mode: outbound }
-
-                # create a 2px black border: center the thumbnail on a black background
-                # 4px larger to create a 2px border around the final image
-                background: { size: [124, 94], position: center, color: '#000000' }
+sensio_framework_extra:
+    request: { converters: true }
+    view:    { annotations: false }
+    router:  { annotations: true }

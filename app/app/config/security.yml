@@ -27,8 +27,8 @@ security:
             # activate different ways to authenticate
             logout: 
                 path: /logout
-            form_login:
-                csrf_token_generator: security.csrf.token_manager
+            #form_login:
+                #csrf_token_generator: security.csrf.token_manager
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
             pattern: ^/
             http_basic: ~

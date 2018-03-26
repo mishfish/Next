@@ -24,11 +24,11 @@ class NextNews
     /**
      * @var int
      *
-     * @ORM\Column(name="Id", type="integer")
-     * @ORM\Id
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $Id;
+    private $id;
 
     /**
      * @var \DateTime
@@ -109,9 +109,9 @@ class NextNews
      *
      * @return int
      */
-    public function getId()
+    public function getid()
     {
-        return $this->Id;
+        return $this->id;
     }
 
     // Set creationDate

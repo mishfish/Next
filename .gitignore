@@ -2,6 +2,7 @@ app/web/app_dev.php
 docker-compose.yml
 docker/
 app/vendor/
+app/node_modules/
 .data/
 /app/app/config/parameters.yml
 /app/var/

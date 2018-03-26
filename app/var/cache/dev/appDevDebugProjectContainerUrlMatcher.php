@@ -15,10 +15,10 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         $this->context = $context;
     }
 
-    public function match($pathinfo)
+    public function match($rawPathinfo)
     {
         $allow = array();
-        $pathinfo = rawurldecode($pathinfo);
+        $pathinfo = rawurldecode($rawPathinfo);
         $trimmedPathinfo = rtrim($pathinfo, '/');
         $context = $this->context;
         $request = $this->request;
@@ -39,11 +39,12 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             if (0 === strpos($pathinfo, '/_profiler')) {
                 // _profiler_home
                 if ('/_profiler' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'web_profiler.controller.profiler:homeAction',  '_route' => '_profiler_home',);
                     if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', '_profiler_home');
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', '_profiler_home'));
                     }
 
-                    return array (  '_controller' => 'web_profiler.controller.profiler:homeAction',  '_route' => '_profiler_home',);
+                    return $ret;
                 }
 
                 if (0 === strpos($pathinfo, '/_profiler/search')) {
@@ -118,51 +119,44 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\AuthController::logoutAction',  '_route' => 'auth_logout',);
         }
 
+        if (0 === strpos($pathinfo, '/api/mail')) {
+            // app_news_post
+            if ('/api/mail' === $pathinfo) {
+                if ('POST' !== $canonicalMethod) {
+                    $allow[] = 'POST';
+                    goto not_app_news_post;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\NewsController::postAction',  '_route' => 'app_news_post',);
+            }
+            not_app_news_post:
+
+            // app_news_get
+            if ('/api/mail' === $pathinfo) {
+                if ('GET' !== $canonicalMethod) {
+                    $allow[] = 'GET';
+                    goto not_app_news_get;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\NewsController::getAction',  '_route' => 'app_news_get',);
+            }
+            not_app_news_get:
+
+        }
+
         // homepage
         if ('' === $trimmedPathinfo) {
+            $ret = array (  '_controller' => 'AppBundle\\Controller\\NewsController::indexAction',  '_route' => 'homepage',);
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
+                return array_replace($ret, $this->redirect($rawPathinfo.'/', 'homepage'));
             }
 
-            return array (  '_controller' => 'AppBundle\\Controller\\NewsController::indexAction',  '_route' => 'homepage',);
+            return $ret;
         }
 
-        if (0 === strpos($pathinfo, '/news')) {
-            // news_create
-            if ('/news/create' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\NewsController::createAction',  '_route' => 'news_create',);
-            }
-
-            // news_show
-            if (preg_match('#^/news/(?P<relativeUrl>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'news_show')), array (  '_controller' => 'AppBundle\\Controller\\NewsController::showAction',));
-            }
-
-        }
-
-        elseif (0 === strpos($pathinfo, '/media/cache/resolve')) {
-            // liip_imagine_filter_runtime
-            if (preg_match('#^/media/cache/resolve/(?P<filter>[A-z0-9_-]*)/rc/(?P<hash>[^/]++)/(?P<path>.+)$#s', $pathinfo, $matches)) {
-                if ('GET' !== $canonicalMethod) {
-                    $allow[] = 'GET';
-                    goto not_liip_imagine_filter_runtime;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'liip_imagine_filter_runtime')), array (  '_controller' => 'liip_imagine.controller:filterRuntimeAction',));
-            }
-            not_liip_imagine_filter_runtime:
-
-            // liip_imagine_filter
-            if (preg_match('#^/media/cache/resolve/(?P<filter>[A-z0-9_-]*)/(?P<path>.+)$#s', $pathinfo, $matches)) {
-                if ('GET' !== $canonicalMethod) {
-                    $allow[] = 'GET';
-                    goto not_liip_imagine_filter;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'liip_imagine_filter')), array (  '_controller' => 'liip_imagine.controller:filterAction',));
-            }
-            not_liip_imagine_filter:
-
+        // homepage2
+        if (preg_match('#^/(?P<slug>[^/]++)?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'homepage2')), array (  'slug' => NULL,  '_controller' => 'AppBundle\\Controller\\NewsController::indexAction',));
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
