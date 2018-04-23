@@ -8,5 +8,5 @@ parameters:
     mailer_transport: gmail
     mailer_host: smtp.gmail.com
     mailer_user: nick.whatsoever
-    mailer_password: "#219592aaa"
+    mailer_password: '#219592aaa'
     secret: 219592aaa

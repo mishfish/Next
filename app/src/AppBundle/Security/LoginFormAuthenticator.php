@@ -3,6 +3,7 @@
 namespace AppBundle\Security;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Guard\AuthenticatorInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationEsception;
@@ -18,7 +19,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
+class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements AuthenticatorInterface
 {
     use TargetPathTrait;
     private $formFactory;
@@ -37,6 +38,14 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         $this->em = $em;
         $this->router = $router;
         $this->passwordEncoder = $passwordEncoder;
+    }
+
+    /**
+     * @todo
+     */
+    public function supports(Request $request)
+    {
+        return $request->getPathInfo() == '/login' && $request->isMethod('POST');
     }
 
     public function getCredentials(Request $request) 
