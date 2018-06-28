@@ -6,6 +6,8 @@
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-migrations-bundle": "^1.3",
         "doctrine/orm": "^2.5",
+        "happyr/doctrine-specification": "^0.7.2",
+        "kphoen/rulerz": "^0.20.5",
         "sensio/framework-extra-bundle": "^3.0.2",
         "symfony/asset": "^4.0",
         "symfony/console": "^4.0",
@@ -15,10 +17,12 @@
         "symfony/framework-bundle": "^4.0",
         "symfony/lts": "^4@dev",
         "symfony/monolog-bundle": "^3.1.0",
+        "symfony/orm-pack": "^1.0",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/profiler-pack": "^1.0",
         "symfony/security-bundle": "^4.0",
         "symfony/security-csrf": "^4.0",
+        "symfony/serializer": "^4.0",
         "symfony/swiftmailer-bundle": "^3.2",
         "symfony/translation": "^4.0",
         "symfony/twig-bundle": "^4.0",
@@ -27,9 +31,10 @@
         "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {
-        "symfony/phpunit-bridge": "^4.0",
         "phpunit/phpunit": "^6.0",
-        "symfony/dotenv": "^4.0"
+        "symfony/dotenv": "^4.0",
+        "symfony/maker-bundle": "^1.5",
+        "symfony/phpunit-bridge": "^4.0"
     },
     "config": {
         "preferred-install": {

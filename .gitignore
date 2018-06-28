@@ -3,6 +3,7 @@ docker/
 app/vendor/
 app/node_modules/
 .data/
+.idea
 /app/app/config/parameters.yml
 /app/var/
 
