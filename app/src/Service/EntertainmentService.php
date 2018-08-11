@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Entertainment\Specifications\ActiveEntertainments;
 use App\Repository\EntertainmentTypeRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Serializer\SerializerInterface;
@@ -44,7 +45,7 @@ class EntertainmentService
      */
     public function getEntertainments()
     {
-        $entertainments = $this->entertainmentTypeRepository->getAvailableEntertainments();
+        $entertainments = $this->entertainmentTypeRepository->match(new ActiveEntertainments());
         return $entertainments;
     }
 

@@ -54,4 +54,6 @@ class EntertainmentType
 
         return $this;
     }
+
+    const PROP_ACTIVE = 'isActive';
 }
