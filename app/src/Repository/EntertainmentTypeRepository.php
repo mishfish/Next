@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\EntertainmentType;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Happyr\DoctrineSpecification\EntitySpecificationRepositoryTrait;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -14,6 +15,8 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class EntertainmentTypeRepository extends ServiceEntityRepository
 {
+    use EntitySpecificationRepositoryTrait;
+
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, EntertainmentType::class);
